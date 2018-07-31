@@ -20,4 +20,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/computers', 'ComputersController@index')->name('computers');
+Route::resource('computers', 'ComputersController');
