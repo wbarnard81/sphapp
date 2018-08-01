@@ -79,7 +79,9 @@ class ComputersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $computer = Computer::find($id);
+
+        return view('pages.edit')->with('computer', $computer);
     }
 
     /**
@@ -91,7 +93,27 @@ class ComputersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'serialnumber' => 'required',
+            'username' => 'required',
+            'hostname' => 'required',
+            'manufacturer' => 'required',
+            'model' => 'required',
+            'cpumodel' => 'required',
+            'memory' => 'required',
+        ]);
+
+        $computer = Computer::find($id);
+        $computer->serialnumber = $request->input('serialnumber');
+        $computer->username = $request->input('username');
+        $computer->hostname = $request->input('hostname');
+        $computer->manufacturer = $request->input('manufacturer');
+        $computer->model = $request->input('model');
+        $computer->cpumodel = $request->input('cpumodel');
+        $computer->memory = $request->input('memory');
+        $computer->save();
+
+        return redirect('/computers')->with('success', 'Computer has been updated.');
     }
 
     /**
@@ -102,6 +124,9 @@ class ComputersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $computer = Computer::find($id);
+        $computer->delete();
+
+        return redirect('/computers')->with('success', 'Computer has been Deleted.');
     }
 }
