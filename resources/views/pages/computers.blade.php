@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>SPH Computers</h1>
+  <div class="form-inline">
+    <h1 class="mr-auto">SPH Computers</h1>
+    <button class="btn btn-light mb-2"><a href="computers/create">Add Computer</a></button>
+  </div>
     <div class="well">
             <table class="table table-bordered">
                     <thead>
