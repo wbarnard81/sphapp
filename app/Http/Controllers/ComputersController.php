@@ -57,7 +57,7 @@ class ComputersController extends Controller
         $computer->memory = $request->input('memory');
         $computer->save();
 
-        return redirect('pages.computers')->with('success', 'Computer has been added.');
+        return redirect('/computers')->with('success', 'Computer has been added.');
     }
 
     /**
