@@ -33,10 +33,11 @@
         </div>
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary', 'id' => 'addPcSubmit'])}}
+        {!! Form::open(['action' => ['ComputersController@destroy', $computer->id], 'method' => 'POST']) !!}
+            {{Form::hidden('_method', 'DELETE')}}
+            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+        {!! Form::close() !!}
     {!! Form::close() !!}
 
-    {!! Form::open(['action' => ['ComputersController@destroy', $computer->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
-        {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-    {!! Form::close() !!}
+
 </div>
