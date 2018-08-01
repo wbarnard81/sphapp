@@ -37,7 +37,27 @@ class ComputersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'serialnumber' => 'required',
+            'username' => 'required',
+            'hostname' => 'required',
+            'manufacturer' => 'required',
+            'model' => 'required',
+            'cpumodel' => 'required',
+            'memory' => 'required',
+        ]);
+
+        $computer = new Computer;
+        $computer->serialnumber = $request->input('serialnumber');
+        $computer->username = $request->input('username');
+        $computer->hostname = $request->input('hostname');
+        $computer->manufacturer = $request->input('manufacturer');
+        $computer->model = $request->input('model');
+        $computer->cpumodel = $request->input('cpumodel');
+        $computer->memory = $request->input('memory');
+        $computer->save();
+
+        return redirect('pages.computers')->with('success', 'Computer has been added.');
     }
 
     /**

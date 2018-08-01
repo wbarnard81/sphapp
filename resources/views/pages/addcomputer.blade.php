@@ -1,33 +1,36 @@
 @include('layouts.app')
 
-<form class="container">
-    <div class="form-group">
-        <label>Serial Number</label>
-        <input type="password" class="form-control" id="serialnumber" placeholder="Serial Number">
-    </div>
-    <div class="form-group">
-        <label>User Name</label>
-        <input type="password" class="form-control" id="username" placeholder="User Name">
-    </div>
-    <div class="form-group">
-        <label>Host Name</label>
-        <input type="password" class="form-control" id="hostname" placeholder="Host Name">
-    </div>
-    <div class="form-group">
-        <label>Manufacturer</label>
-        <input type="password" class="form-control" id="manufacturer" placeholder="Manufacturer">
-    </div>
-    <div class="form-group">
-        <label>Model</label>
-        <input type="password" class="form-control" id="model" placeholder="Model">
-    </div>
-    <div class="form-group">
-        <label>CPU Model</label>
-        <input type="password" class="form-control" id="cpumodel" placeholder="CPU Model">
-    </div>
-    <div class="form-group">
-        <label>Memory</label>
-        <input type="password" class="form-control" id="memory" placeholder="Memory">
-    </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+<div class="container">
+    <h1>Add a computer to the list.</h1>
+    {!! Form::open(['action' => 'ComputersController@store', 'method' => 'POST']) !!}
+        <div class="form-group">
+            {{Form::label('serialnumber', 'Serial Number')}}
+            {{Form::text('serialnumber', '', ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
+        </div>
+        <div class="form-group">
+            {{Form::label('username', 'User Name')}}
+            {{Form::text('username', '', ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
+        </div>
+        <div class="form-group">
+            {{Form::label('hostname', 'Host Name')}}
+            {{Form::text('hostname', '', ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
+        </div>
+        <div class="form-group">
+            {{Form::label('manufacturer', 'Manufacturer')}}
+            {{Form::text('manufacturer', '', ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
+        </div>
+        <div class="form-group">
+            {{Form::label('model', 'Model')}}
+            {{Form::text('model', '', ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
+        </div>
+        <div class="form-group">
+            {{Form::label('cpumodel', 'CPU Model')}}
+            {{Form::text('cpumodel', '', ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
+        </div>
+        <div class="form-group">
+            {{Form::label('memory', 'Memory')}}
+            {{Form::text('memory', '', ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
+        </div>
+        {{Form::submit('Submit', ['class' => 'btn btn-primary', 'id' => 'addPcSubmit'])}}
+    {!! Form::close() !!}
+</div>
