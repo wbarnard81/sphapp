@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Computer;
+use \App\Http\Requests\ComputerCreateRequest;
+use \App\Computer;
+use \Illuminate\Http\Request;
+
 
 class ComputersController extends Controller
 {
@@ -32,30 +34,12 @@ class ComputersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ComputerCreateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComputerCreateRequest $computerCreateRequest)
     {
-        $this->validate($request, [
-            'serialnumber' => 'required',
-            'username' => 'required',
-            'hostname' => 'required',
-            'manufacturer' => 'required',
-            'model' => 'required',
-            'cpumodel' => 'required',
-            'memory' => 'required',
-        ]);
-
-        $computer = new Computer;
-        $computer->serialnumber = $request->input('serialnumber');
-        $computer->username = $request->input('username');
-        $computer->hostname = $request->input('hostname');
-        $computer->manufacturer = $request->input('manufacturer');
-        $computer->model = $request->input('model');
-        $computer->cpumodel = $request->input('cpumodel');
-        $computer->memory = $request->input('memory');
-        $computer->save();
+        Computer::create($computerCreateRequest->all());
 
         return redirect('/computers')->with('success', 'Computer has been added.');
     }
@@ -79,7 +63,7 @@ class ComputersController extends Controller
      */
     public function edit($id)
     {
-        $computer = Computer::find($id);
+        $computer = Computer::findOrFail($id);
 
         return view('pages.edit')->with('computer', $computer);
     }
@@ -91,28 +75,16 @@ class ComputersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ComputerCreateRequest $computerCreateRequest, $id)
     {
-        $this->validate($request, [
-            'serialnumber' => 'required',
-            'username' => 'required',
-            'hostname' => 'required',
-            'manufacturer' => 'required',
-            'model' => 'required',
-            'cpumodel' => 'required',
-            'memory' => 'required',
-        ]);
-
-        $computer = Computer::find($id);
-        $computer->serialnumber = $request->input('serialnumber');
-        $computer->username = $request->input('username');
-        $computer->hostname = $request->input('hostname');
-        $computer->manufacturer = $request->input('manufacturer');
-        $computer->model = $request->input('model');
-        $computer->cpumodel = $request->input('cpumodel');
-        $computer->memory = $request->input('memory');
-        $computer->save();
-
+        try {
+            $computer = Computer::find($id);
+            $computer->update($computerCreateRequest->all());
+            $computer->save();
+        } catch (\Exception $exception) {
+            return redirect('/computers')->with('error', 'Error: ' . $exception->getMessage);
+        }
+        
         return redirect('/computers')->with('success', 'Computer has been updated.');
     }
 
@@ -124,9 +96,13 @@ class ComputersController extends Controller
      */
     public function destroy($id)
     {
-        $computer = Computer::find($id);
-        $computer->delete();
-
+        try {
+            $computer = Computer::find($id);
+            $computer->delete();
+        } catch (\Exception $exception) {
+            return redirect('/computers')->with('error', $exception->getMessage());    
+        }
+        
         return redirect('/computers')->with('success', 'Computer has been Deleted.');
     }
 }
