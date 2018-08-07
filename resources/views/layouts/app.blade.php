@@ -15,6 +15,7 @@
     <script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -25,7 +26,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-dark navbar-laravel bg-dark">
             <div class="container">
                 <img src="/SGOC.png">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -53,22 +54,23 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                    {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                            </li>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
+                                        {{ csrf_field() }}
                                     </form>
                                 </div>
-                            </li>
+
                         @endguest
                     </ul>
                 </div>
@@ -77,12 +79,14 @@
         <div class="container">
             @include('includes.messages')
         </div>
-        <div class="py-4">
+        <div class="py-4 mh-100">
             @yield('content')
         </div>
     </div>
 
-    
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark text-center">
+        <a class="navbar-brand mx-auto" href="#">Created by Werner Barnard</a>
+    </nav>
 
     <script type="text/javascript">
         $(document).ready(function () {

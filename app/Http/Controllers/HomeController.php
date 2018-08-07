@@ -13,7 +13,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $jokeContent = file_get_contents('http://api.icndb.com/jokes/random');
+        $jokesArray = json_decode($jokeContent, true);
+        $joke = $jokesArray['value']['joke'];
+        return view('home')->with('joke', $joke);
     }
 
     public function welcome()

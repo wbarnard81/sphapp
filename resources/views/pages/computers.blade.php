@@ -3,7 +3,7 @@
 @section('content')
   <div class="form-inline">
     <h1 class="mr-auto">SPH Computers</h1>
-    <button class="btn btn-dark mb-2"><a href="/computers/create">Add Computer</a></button>
+    <a class="btn btn-dark mb-2" href="/computers/create">Add Computer</a>
 </div>
 <div class="well">
   <table id="computers-datatable" class="table table-striped">

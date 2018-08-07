@@ -19,5 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('computers', 'ComputersController')->middleware(['auth']);
+Route::get('/computers', 'ComputersController@index');
 Route::get('/computers/{id}/edit', 'ComputersController@edit')->middleware(['auth']);
 Route::get('/computers/{id}/delete', 'ComputersController@destroy')->middleware(['auth']);
+
