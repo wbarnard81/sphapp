@@ -37,42 +37,42 @@
                     <div class="row justify-content-center">
                         <div class="col-md-3">
                             <div class="card-body">
-                                <p>IT Policy
-                                    <button class="btn btn-secondary">Text1</button>
+                                <p>
+                                    <a href="/SPH/IT Policy.pdf" class="btn btn-secondary">IT Policy</a>
                                 </p>
                             </div>
                         </div>
                     <div class="col-md-3">
                         <div class="card-body">
-                            <p>IT Policy
+                            <p>
+                                <a href="/SPH/OoO Email Policy.pdf" class="btn btn-secondary">Email Policy</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card-body">
+                            <p>
+                                <a href="/SPH/Extension List 2018.xlsx" class="btn btn-secondary">Extension List</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card-body">
+                            <p>
                                 <button class="btn btn-secondary">Text1</button>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card-body">
-                            <p>IT Policy
+                            <p>
                                 <button class="btn btn-secondary">Text1</button>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card-body">
-                            <p>IT Policy
-                                <button class="btn btn-secondary">Text1</button>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card-body">
-                            <p>IT Policy
-                                <button class="btn btn-secondary">Text1</button>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card-body">
-                            <p>IT Policy
+                            <p>
                                 <button class="btn btn-secondary">Text1</button>
                             </p>
                         </div>
