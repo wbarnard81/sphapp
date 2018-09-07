@@ -17,7 +17,7 @@
                     @endif
 
                     <h4>Welcome to the new SPH Web App.</h4>
-                    <p><a href="/computers">Click here to see all the computers.</a></p>
+                    <p><a href="/sphapp/computers">Click here to see all the computers.</a></p>
                 </div>
             </div>
         </div>
