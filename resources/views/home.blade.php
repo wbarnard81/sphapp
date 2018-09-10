@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 mt-4">
             <div class="card">
                 <div class="card-header">SPH Policies and Procedures.</div>
                     <div class="row justify-content-center">
@@ -53,27 +53,6 @@
                         <div class="card-body">
                             <p>
                                 <a href="/SPH/Extension List 2018.xlsx" class="btn btn-secondary">Extension List</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card-body">
-                            <p>
-                                <button class="btn btn-secondary">Text1</button>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card-body">
-                            <p>
-                                <button class="btn btn-secondary">Text1</button>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card-body">
-                            <p>
-                                <button class="btn btn-secondary">Text1</button>
                             </p>
                         </div>
                     </div>

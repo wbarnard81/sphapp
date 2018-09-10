@@ -11,18 +11,14 @@
     <title>{{ config('app.name', 'SPHAPP') }}</title>
 
     <!-- Scripts -->
-    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
-    <script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
-
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 </head>
 <body>
     <div id="app">
@@ -76,22 +72,26 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container mt-2">
             @include('includes.messages')
         </div>
-        <div class="py-4 mh-100">
+        <div class="py-5 mh-100 ml-2 mr-2">
             @yield('content')
         </div>
     </div>
 
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark text-center">
-        <a class="navbar-brand mx-auto" href="#">Created by Werner Barnard</a>
+        <a class="navbar-brand mx-auto" href="/">Created by Werner Barnard</a>
     </nav>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#computers-datatable").DataTable();
-        });
+    <script>
+        window.setTimeout(function() {
+            $(".alert")
+                .fadeTo(500, 0)
+                .slideUp(500, function() {
+                $(this).remove();
+                });
+            }, 4000);
     </script>
 </body>
 </html>

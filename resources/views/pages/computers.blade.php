@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        @if(count($computers) > 1)
+        @if(count($computers) > 0)
           @foreach($computers as $computer)
             <tr>
               <td>{{$computer->serialnumber}}</td>
@@ -32,8 +32,8 @@
               <td>{{$computer->cpumodel}}</td>
               <td>{{$computer->memory}}</td>
               <td>
-                <a class="btn btn-sm btn-success" href="/computers/{{$computer->id}}/edit">Edit</a>
-                <a class="btn btn-sm btn-danger" href="/computers/{{$computer->id}}/delete">Delete</a>
+                <a class="btn btn-sm btn-success" href="/sphapp/computers/{{$computer->id}}/edit">Edit</a>
+                <a class="btn btn-sm btn-danger" href="/sphapp/computers/{{$computer->id}}/delete">Delete</a>
               </td>
             </tr>
           @endforeach
