@@ -6,7 +6,7 @@
     <a class="btn btn-dark mb-2" href="/computers/create">Add Computer</a>
 </div>
 <div class="well">
-  <table id="computers-datatable" class="table table-striped">
+  <table id="table_id" class="table table-striped">
       <thead>
         <tr>
           <th scope="col">Serial Number</th>
@@ -20,7 +20,7 @@
 
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tbody">
         @if(count($computers) > 0)
           @foreach($computers as $computer)
             <tr>

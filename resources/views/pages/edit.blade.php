@@ -1,6 +1,6 @@
 @include('layouts.app')
 
-<div class="container">
+<div class="container pb-5 mb-5">
     <h1>Edit the selected computer.</h1>
     {!! Form::open(['action' => ['ComputersController@update', $computer->id], 'method' => 'POST']) !!}
         <div class="form-group">
@@ -31,12 +31,17 @@
             {{Form::label('memory', 'Memory')}}
             {{Form::text('memory', $computer->memory , ['class' => 'form-control', 'placeholder' => 'Enter here...'])}}
         </div>
-        {{Form::hidden('_method', 'PUT')}}
-        {{Form::submit('Submit', ['class' => 'btn btn-primary', 'id' => 'addPcSubmit'])}}
-    {!! Form::close() !!}
-
-    {!! Form::open(['action' => ['ComputersController@destroy', $computer->id], 'method' => 'POST']) !!}
-        {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Delete', ['class' => 'btn btn-danger float-left'])}}
-    {!! Form::close() !!}
+        <div class="row">
+            <div>
+                {{Form::hidden('_method', 'PUT')}}
+                {{Form::submit('Submit', ['class' => 'btn btn-primary', 'id' => 'addPcSubmit'])}}
+                {!! Form::close() !!}
+            </div>
+            <div class="ml-2">
+                {!! Form::open(['action' => ['ComputersController@destroy', $computer->id], 'method' => 'POST']) !!}
+                    {{Form::hidden('_method', 'DELETE')}}
+                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                {!! Form::close() !!}
+            </div>
+        </div>
 </div>
