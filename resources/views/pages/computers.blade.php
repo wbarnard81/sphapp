@@ -7,7 +7,7 @@
 </div>
 <div class="well">
   <table id="table_id" class="table table-striped">
-      <thead>
+      <thead class="thead-dark">
         <tr>
           <th scope="col">Serial Number</th>
           <th scope="col">User Name</th>
