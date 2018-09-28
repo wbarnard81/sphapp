@@ -25,7 +25,7 @@
     <tbody id="tbody">
       @if(count($computers) > 0) @foreach($computers as $computer)
       <tr>
-        <td>{{$computer->serialnumber}}</td>
+        <td><a class="btn btn-outline-dark" href="/computers/{{$computer->id}}/edit">{{$computer->serialnumber}}</a></td>
         <td>{{$computer->username}}</td>
         <td>{{$computer->email}}</td>
         <td>{{$computer->hostname}}</td>
@@ -36,8 +36,7 @@
         <td>{{$computer->officetype}}</td>
         <td>{{$computer->officekey}}</td>
         <td>
-          <a class="btn btn-sm btn-success" href="/computers/{{$computer->id}}/edit">Edit</a>
-          <a class="btn btn-sm btn-danger" href="/computers/{{$computer->id}}/delete">Delete</a>
+          <a class="btn btn-outline-danger" href="/computers/{{$computer->id}}/delete">Delete</a>
         </td>
       </tr>
       @endforeach @else
@@ -46,6 +45,7 @@
     </tbody>
   </table>
 </div>
+<hr class="mt-4">
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
   $(document).ready( function () {
