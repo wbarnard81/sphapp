@@ -26,11 +26,14 @@ class ComputerCreateRequest extends FormRequest
         return[
             'serialnumber' => 'required',
             'username' => 'required',
+            'email' => 'required',
             'hostname' => 'required',
             'manufacturer' => 'required',
             'model' => 'required',
             'cpumodel' => 'required',
             'memory' => 'required',
+            'officeproduct' => 'required',
+            'officekey' => 'required',
         ];
     }
 }
