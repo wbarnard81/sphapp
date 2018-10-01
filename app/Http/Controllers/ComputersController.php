@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use \App\Http\Requests\ComputerCreateRequest;
 use \App\Computer;
+use \App\Http\Requests\ComputerCreateRequest;
 use \Illuminate\Http\Request;
-use DataTables;
-use Yajra\DataTables\Html\Builder;
-
 
 class ComputersController extends Controller
 {
@@ -85,10 +82,10 @@ class ComputersController extends Controller
             $computer->update($computerCreateRequest->all());
             $computer->save();
         } catch (\Exception $exception) {
-            return redirect('/sphapp/computers')->with('error', 'Error: ' . $exception->getMessage);
+            return redirect('/computers')->with('error', 'Error: ' . $exception->getMessage);
         }
-        
-        return redirect('/sphapp/computers')->with('success', 'Computer has been updated.');
+
+        return redirect('/computers')->with('success', 'Computer has been updated.');
     }
 
     /**
@@ -103,9 +100,9 @@ class ComputersController extends Controller
             $computer = Computer::find($id);
             $computer->delete();
         } catch (\Exception $exception) {
-            return redirect('/sphapp/computers')->with('error', $exception->getMessage());    
+            return redirect('/computers')->with('error', $exception->getMessage());
         }
-        
-        return redirect('/sphapp/computers')->with('success', 'Computer has been Deleted.');
+
+        return redirect('/computers')->with('success', 'Computer has been Deleted.');
     }
 }
