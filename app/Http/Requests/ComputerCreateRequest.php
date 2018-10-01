@@ -23,7 +23,7 @@ class ComputerCreateRequest extends FormRequest
      */
     public function rules()
     {
-        return[
+        return [
             'serialnumber' => 'required',
             'username' => 'required',
             'email' => 'required',
@@ -32,7 +32,7 @@ class ComputerCreateRequest extends FormRequest
             'model' => 'required',
             'cpumodel' => 'required',
             'memory' => 'required',
-            'officeproduct' => 'required',
+            'officetype' => 'required',
             'officekey' => 'required',
         ];
     }
