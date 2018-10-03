@@ -38,11 +38,9 @@ class ComputersController extends Controller
      */
     public function store(ComputerCreateRequest $computerCreateRequest)
     {
-        $validateSerial = $computerCreateRequest->validate([
-            'sereialnumber' => 'unique:computers',
-        ]);
-
-        return back()->with("error", "Computer serial number already exists.");
+        // $this->validate($computerCreateRequest, [
+        //     'sereialnumber' => 'unique:computers']);
+        // dd($this);
 
         Computer::create($computerCreateRequest->all());
 

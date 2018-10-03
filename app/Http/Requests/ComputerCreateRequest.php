@@ -24,7 +24,7 @@ class ComputerCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'serialnumber' => 'required',
+            'serialnumber' => 'required|unique:computers',
             'username' => 'required',
             'email' => 'required',
             'hostname' => 'required',
@@ -33,7 +33,7 @@ class ComputerCreateRequest extends FormRequest
             'cpumodel' => 'required',
             'memory' => 'required',
             'officetype' => 'required',
-            'officekey' => 'required',
+            'officekey' => 'required|unique:computers',
         ];
     }
 }

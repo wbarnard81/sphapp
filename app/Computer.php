@@ -20,10 +20,9 @@ class Computer extends Model
      * @var string $primaryKey
      */
     public $primaryKey = 'id';
-    
+
     /**
      * @var string $serialNumber
      */
     public $serialNumber = 'serialnumber';
 }
-
