@@ -16,7 +16,6 @@ class ComputersController extends Controller
     public function index()
     {
         $computers = Computer::all();
-        // $computers = Computer::all();
 
         return view('pages.computers')->with('computers', $computers);
     }
@@ -39,9 +38,16 @@ class ComputersController extends Controller
      */
     public function store(ComputerCreateRequest $computerCreateRequest)
     {
+        $validateSerial = $computerCreateRequest->validate([
+            'sereialnumber' => 'unique:computers',
+        ]);
+
+        return back()->with("error", "Computer serial number already exists.");
+
         Computer::create($computerCreateRequest->all());
 
         return redirect('/computers')->with('success', 'Computer has been added.');
+
     }
 
     /**
