@@ -38,10 +38,6 @@ class ComputersController extends Controller
      */
     public function store(ComputerCreateRequest $computerCreateRequest)
     {
-        // $this->validate($computerCreateRequest, [
-        //     'sereialnumber' => 'unique:computers']);
-        // dd($this);
-
         Computer::create($computerCreateRequest->all());
 
         return redirect('/computers')->with('success', 'Computer has been added.');
