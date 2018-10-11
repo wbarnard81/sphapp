@@ -4,37 +4,22 @@
   <h1 class="mr-auto">SPH Computers</h1>
   <a class="btn btn-dark mb-2" href="/computers/create">Add Computer</a>
 </div>
-<div class="well">
-  <table id="table_id" class="table table-striped">
+<div class="well container">
+  <table id="table_id" class="table table-bordered table-hover">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Serial Number</th>
         <th scope="col">User Name</th>
         <th scope="col">Email</th>
-        <th scope="col">Computer Name</th>
-        <th scope="col">Manufacturer</th>
-        <th scope="col">Model</th>
-        <th scope="col">CPU Model</th>
-        <th scope="col">Memory</th>
-        <th scope="col">Office Package</th>
-        <th scope="col">Product Key</th>
+        <th scope="col">Site</th>
         <th scope="col">Actions</th>
-
       </tr>
     </thead>
     <tbody id="tbody">
       @if(count($computers) > 0) @foreach($computers as $computer)
       <tr>
-        <td><a class="btn btn-outline-dark" href="/computers/{{$computer->id}}/edit">{{$computer->serialnumber}}</a></td>
-        <td>{{$computer->username}}</td>
+        <td><a class="btn btn-link" href="/computers/{{$computer->id}}/edit">{{$computer->username}}</a></td>
         <td>{{$computer->email}}</td>
-        <td>{{$computer->hostname}}</td>
-        <td>{{$computer->manufacturer}}</td>
-        <td>{{$computer->model}}</td>
-        <td>{{$computer->cpumodel}}</td>
-        <td>{{$computer->memory}}</td>
-        <td>{{$computer->officetype}}</td>
-        <td>{{$computer->officekey}}</td>
+        <td>{{$computer->site}}</td>
         <td>
           <a class="btn btn-outline-danger" href="/computers/{{$computer->id}}/delete">Delete</a>
         </td>

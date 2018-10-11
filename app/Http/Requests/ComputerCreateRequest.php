@@ -37,6 +37,7 @@ class ComputerCreateRequest extends FormRequest
             'memory' => 'required',
             'officetype' => 'required',
             'officekey' => 'required|unique:computers,officekey,' . $id,
+            'site' => 'required',
         ];
     }
 

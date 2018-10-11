@@ -31,16 +31,25 @@
         => '...'])}}
     </div>
     <div class="form-group">
-        {{Form::label('memory', 'Memory')}} {{Form::text('memory', $computer->memory , ['class' => 'form-control', 'placeholder'
-        => '...'])}}
+        {{Form::label('memory', 'Memory')}} {{Form::select('memory', ['1GB' => '1GB', '2GB' => '2GB', '3GB' => '3GB', '4GB' => '4GB',
+        '6GB' => '6GB', '8GB' => '8GB', '10GB' => '10GB', '12GB' => '12GB', '16GB' => '16GB', '24GB' => '24GB', '32GB' =>
+        '32GB'], $computer->memory , ['class' => 'form-control'])}}
     </div>
     <div class="form-group">
-        {{Form::label('officetype', 'Office Package')}} {{Form::text('officetype', $computer->officetype , ['class' => 'form-control',
-        'placeholder' => '...'])}}
+        {{Form::label('officetype', 'Office Package')}} {{Form::select('officetype', ['MS Office HB 2010' => 'MS Office HB 2010',
+        'MS Office HB 2013' => 'MS Office HB 2013', 'MS Office HB 2016' => 'MS Office HB 2016', 'MS Office 365' => 'MS Office
+        365'], $computer->officetype , ['class' => 'form-control'])}}
     </div>
     <div class="form-group">
         {{Form::label('officekey', 'Product Key')}} {{Form::text('officekey', $computer->officekey , ['class' => 'form-control',
         'placeholder' => '...'])}}
+    </div>
+    <div class="form-group">
+        {{Form::label('site', 'Site')}} {{Form::select('site', ['SPH - HO' => 'SPH - HO', 'SPH - Somkhele' => 'SPH - Somkhele', 'SPH
+        - Lions' => 'SPH - Lions', 'SPH - Hernic' => 'SPH - Hernic', 'SPH - TC Smelter' => 'SPH - TC Smelter', 'SPH - Kleinkopje'
+        => 'SPH - Kleinkopje', 'SPH - Glencore' => 'SPH - Glencore', 'SPH - Kathu' => 'SPH - Kathu', 'SPH - Northam' => 'SPH
+        - Northam', 'SPH - Ferrobank' => 'SPH - Ferrobank', 'SPH - Wonderkop' => 'SPH - Wonderkop', 'Almar - HO' => 'Almar
+        - HO'], $computer->site, ['class' => 'form-control'])}}
     </div>
     <div class="row">
         <div>
