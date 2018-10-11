@@ -23,8 +23,11 @@ class ComputerCreateRequest extends FormRequest
      */
     public function rules()
     {
+
+        $id = $this->computer;
+
         return [
-            'serialnumber' => 'required|unique:computers',
+            'serialnumber' => 'required|unique:computers,serialnumber,' . $id,
             'username' => 'required',
             'email' => 'required',
             'hostname' => 'required',
@@ -33,7 +36,8 @@ class ComputerCreateRequest extends FormRequest
             'cpumodel' => 'required',
             'memory' => 'required',
             'officetype' => 'required',
-            'officekey' => 'required|unique:computers',
+            'officekey' => 'required|unique:computers,officekey,' . $id,
         ];
     }
+
 }
