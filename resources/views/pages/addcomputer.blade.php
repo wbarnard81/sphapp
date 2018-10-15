@@ -43,8 +43,8 @@
         {{Form::label('site', 'Site')}} {{ Form::select('site', ['SPH - HO' => 'SPH - HO', 'SPH - Somkhele' => 'SPH - Somkhele',
         'SPH - Lions' => 'SPH - Lions', 'SPH - Hernic' => 'SPH - Hernic', 'SPH - TC Smelter' => 'SPH - TC Smelter', 'SPH
         - Kleinkopje' => 'SPH - Kleinkopje', 'SPH - Glencore' => 'SPH - Glencore', 'SPH - Kathu' => 'SPH - Kathu', 'SPH -
-        Northam' => 'SPH - Northam', 'SPH - Ferrobank' => 'SPH - Ferrobank', 'SPH - Wonderkop' => 'SPH - Wonderkop', 'Almar
-        - HO' => 'Almar - HO'], null, ['class' => 'form-control']) }}
+        Northam' => 'SPH - Northam', 'SPH - Ferrobank' => 'SPH - Ferrobank', 'SPH - Wonderkop' => 'SPH - Wonderkop', 'SPH
+        - Mafube' => 'SPH - Mafube', 'Almar - HO' => 'Almar - HO'], null, ['class' => 'form-control']) }}
     </div>
     {{Form::submit('Submit', ['class' => 'btn btn-primary mb-5', 'id' => 'addPcSubmit'])}} {!! Form::close() !!}
 
