@@ -8,18 +8,22 @@
   <table id="table_id" class="table table-bordered table-hover">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">Serial Number</th>
         <th scope="col">User Name</th>
         <th scope="col">Email</th>
         <th scope="col">Site</th>
         <th scope="col">Actions</th>
+        <th hidden scope="col">Product Key</th>
       </tr>
     </thead>
     <tbody id="tbody">
       @if(count($computers) > 0) @foreach($computers as $computer)
       <tr>
+        <td>{{$computer->serialnumber}}</td>
         <td><a class="btn btn-link" href="/computers/{{$computer->id}}/edit">{{$computer->username}}</a></td>
         <td>{{$computer->email}}</td>
         <td>{{$computer->site}}</td>
+        <td hidden>{{$computer->officekey}}</td>
         <td>
           <a class="btn btn-outline-danger" href="/computers/{{$computer->id}}/delete">Delete</a>
         </td>

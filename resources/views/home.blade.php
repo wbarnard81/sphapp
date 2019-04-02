@@ -26,7 +26,7 @@
 
                 <div class="card-body">
 
-                    <h5>{!! $joke!!}</h5>
+                    <h5>Stay tuned for more information.</h5>
                 </div>
             </div>
         </div>
