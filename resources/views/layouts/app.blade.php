@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="js/jquery.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -95,7 +95,8 @@
                 .slideUp(500, function() {
                 $(this).remove();
                 });
-            }, 4000);
+            }, 3000);
+            @yield('scripts')
     </script>
 
 

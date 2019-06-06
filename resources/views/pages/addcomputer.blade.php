@@ -51,10 +51,10 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            {{Form::label('site', 'Site')}} {{ Form::select('site', ['SPH - HO' => 'SPH - HO', 'SPH - Somkhele' => 'SPH - Somkhele',
+            {{Form::label('site', 'Site')}} {{ Form::select('site', ['SPH - HO' => 'SPH - HO', 'SPH - Cape Town' => 'SPH - Cape Town', 'SPH - Somkhele' => 'SPH - Somkhele',
             'SPH - Lions' => 'SPH - Lions', 'SPH - Hernic' => 'SPH - Hernic', 'SPH - TC Smelter' => 'SPH - TC Smelter', 'SPH
             - Kleinkopje' => 'SPH - Kleinkopje', 'SPH - Glencore' => 'SPH - Glencore', 'SPH - Kathu' => 'SPH - Kathu', 'SPH -
-            Northam' => 'SPH - Northam', 'SPH - Ferrobank' => 'SPH - Ferrobank', 'SPH - Wonderkop' => 'SPH - Wonderkop', 'SPH
+            Northam' => 'SPH - Northam', 'SPH - Ferrobank' => 'SPH - Ferrobank', 'SPH - Witbank' => 'SPH - Witbank', 'SPH - Emang' => 'SPH - Emang', 'SPH - Wonderkop' => 'SPH - Wonderkop', 'SPH
             - Mafube' => 'SPH - Mafube', 'SPH - Zizwe' => 'SPH - Zizwe', 'Almar - HO' => 'Almar - HO'], null, ['class' => 'form-control'])
             }}
         </div>

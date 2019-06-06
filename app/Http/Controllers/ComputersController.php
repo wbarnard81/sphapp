@@ -20,6 +20,13 @@ class ComputersController extends Controller
         return view('pages.computers')->with('computers', $computers);
     }
 
+    public function list()
+    {
+        $computers = Computer::all();
+
+        return view('pages.list')->with('computers', $computers);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
