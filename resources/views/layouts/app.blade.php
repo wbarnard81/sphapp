@@ -11,11 +11,11 @@
 
     <title>{{ config('app.name', 'SPHAPP') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
     <!-- Scripts -->
-    <script src="js/jquery.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -26,9 +26,9 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbar-laravel bg-dark">
-            <div class="container">
+            <div class="container-fluid">
                 <img src="/SGOC.png">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand ml-3" href="{{ url('/') }}">
                     {{ config('app.name', 'SPHAPP') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -53,7 +53,7 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown pr-4">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                     {{ Auth::user()->name }}
@@ -77,16 +77,19 @@
             </div>
         </nav>
         <div class="container mt-2">
-    @include('includes.messages')
+            @include('includes.messages')
         </div>
         <div class="py-4 ml-2 mr-2">
             @yield('content')
         </div>
     </div>
 
-    <nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
-        <a class="navbar-brand mx-auto" href="/">Created by Werner Barnard</a>
-    </nav>
+   
+    <footer class="footer py-3 fixed-bottom bg-dark text-center">
+        <div class="container">
+            <span class="text-muted">Created by Werner Barnard.</span>
+        </div>
+    </footer>
 
     <script>
         window.setTimeout(function() {
@@ -98,8 +101,9 @@
             }, 3000);
             @yield('scripts')
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
 </body>
 
 </html>

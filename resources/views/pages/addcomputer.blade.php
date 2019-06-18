@@ -1,5 +1,5 @@
-@include('layouts.app')
-
+@extends('layouts.app') 
+@section('content')
 <div class="container">
     <h1>Add a computer to the list.</h1>
     {!! Form::open(['action' => 'ComputersController@store', 'method' => 'POST']) !!}
@@ -64,9 +64,10 @@
         </div>
     </div>
     <div class="form-row">
-        {{Form::submit('Submit', ['class' => 'btn btn-primary mb-5', 'id' => 'addPcSubmit'])}} {!! Form::close() !!}
+        {{Form::submit('Submit', ['class' => 'btn btn-primary', 'id' => 'addPcSubmit'])}} {!! Form::close() !!}
         <a href="/computers" class="btn btn-dark ml-2">Cancel</a>
     </div>
 
     <hr/>
 </div>
+@endsection

@@ -1,5 +1,5 @@
-@include('layouts.app')
-
+@extends('layouts.app') 
+@section('content')
 <div class="container pb-5 mb-5">
     <h1>Edit the selected computer.</h1>
     {!! Form::open(['action' => ['ComputersController@update', $computer->id], 'method' => 'POST']) !!}
@@ -78,3 +78,4 @@
         <a href="/computers" class="btn btn-dark ml-2">Cancel</a>
     </div>
 </div>
+@endsection
