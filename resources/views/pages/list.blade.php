@@ -13,6 +13,7 @@
       <th scope="col"><input type="text" id="smodel" placeholder="Search Model"></th>
       <th scope="col"><input type="text" id="suname" placeholder="Search User Name"></th>
       <th scope="col"><input type="text" id="semail" placeholder="Search Email"></th>
+      <th scope="col"><input type="text" id="scpu" placeholder="Search Processor"></th>
       <th scope="col"><input type="text" id="smem" placeholder="Search Memory"></th>
       <th scope="col"><input type="text" id="shdd" placeholder="Search HDD Type"></th>
       <th scope="col"><input type="text" id="ssite" placeholder="Search Site"></th>
@@ -24,6 +25,7 @@
         <th scope="col">Model</th>
         <th scope="col">User Name</th>
         <th scope="col">Email</th>
+        <th scope="col">Processor</th>
         <th scope="col">Memory</th>
         <th scope="col">HDD Type</th>
         <th scope="col">Site</th>
@@ -38,6 +40,7 @@
         <td>{{$computer->model}}</td>
         <td><a class="btn btn-link" href="/computers/{{$computer->id}}/edit">{{$computer->username}}</a></td>
         <td>{{$computer->email}}</td>
+        <td>{{$computer->cpumodel}}</td>
         <td>{{$computer->memory}}</td>
         <td>{{$computer->hddtype}}</td>
         <td>{{$computer->site}}</td>
