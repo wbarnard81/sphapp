@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pcreturn;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PcreturnController extends Controller
 {
@@ -19,11 +20,23 @@ class PcreturnController extends Controller
         return view('pages.pcreturns.create');
     }
 
-    public function store(Pcreturn $Pcreturn)
+    public function store(Request $request)
     {
-        Pcreturn::create($Pcreturn->all());
 
-        return redirect('/pcreturns')->with('success', 'Pcreturn has been added.');
+        $validator = Validator::make($request->all(), [
+            'site' => 'required|min:4|max:50',
+            'fullname' => 'required|min:4|max:50',
+            'email' => 'required|email',
+            'telephone' => 'numeric',
+            'serialnumber' => 'max:25',
+            'software' => 'max:20',
+            'notes' => 'max:255',
+        ]);
+        $data = $validator->validate();
+
+        Pcreturn::create($data);
+
+        return redirect('/')->with('success', 'Your PC Return has been logged.');
     }
 
     public function show($id)
@@ -38,17 +51,28 @@ class PcreturnController extends Controller
         return view('pages.pcreturns.edit')->with('pcreturns', $pcreturns);
     }
 
-    public function update(Pcreturn $pcreturns, $id)
+    public function update(Request $request, $id)
     {
         try {
-            $pcreturns = Pcreturn::find($id);
-            $pcreturns->update($pcreturns->all());
-            $pcreturns->save();
+            $validator = Validator::make($request->all(), [
+                'site' => 'required|min:4|max:50',
+                'fullname' => 'required|min:4|max:50',
+                'email' => 'required|email',
+                'telephone' => 'numeric',
+                'serialnumber' => 'max:25',
+                'software' => 'max:20',
+                'notes' => 'max:255',
+            ]);
+            $data = $validator->validate();
+
+            $pcupdate = Pcreturn::find($id);
+            $pcupdate->update($data);
+            $pcupdate->save();
         } catch (\Exception $exception) {
             return redirect('/pcreturns')->with('error', 'Error: ' . $exception->getMessage);
         }
 
-        return redirect('/pcreturns')->with('success', 'Pcreturn has been updated.');
+        return redirect('/pcreturns')->with('success', 'The return has been updated.');
     }
 
     public function destroy($id)
@@ -60,6 +84,6 @@ class PcreturnController extends Controller
             return redirect('/pcreturns')->with('error', $exception->getMessage());
         }
 
-        return redirect('/pcreturns')->with('success', 'Pcreturn has been Deleted.');
+        return redirect('/pcreturns')->with('success', 'The return has been deleted.');
     }
 }

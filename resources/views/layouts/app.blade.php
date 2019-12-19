@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <!-- Scripts -->
     <script src="/js/jquery-3.4.1.min.js"></script>

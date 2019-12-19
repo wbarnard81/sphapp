@@ -15,6 +15,13 @@ class CreatePcreturnsTable extends Migration
     {
         Schema::create('pcreturns', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('site');
+            $table->string('fullname');
+            $table->string('email');
+            $table->string('telephone');
+            $table->string('serialnumber');
+            $table->string('software');
+            $table->string('notes');
             $table->timestamps();
         });
     }
