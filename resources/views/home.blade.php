@@ -15,14 +15,21 @@
                     </div>
                     @endif
 
-                    <h4>Welcome to the new SPH Web App.</h4>
-                    <p><a href="/computers">Click here to see all the computers.</a></p>
+                    <div class="flex-row">
+                        <div class="d-flex justify-content-around">
+                            @if (Auth::check())
+                            <div><a href="/computers" class="btn btn-primary btn-lg">SPH Computers.</a></div>
+                            <div><a href="/birthdays" class="btn btn-success btn-lg">SPH Birthdays.</a></div>
+                            @endif
+                            <div><a href="/pcreturns" class="btn btn-warning btn-lg">Log PC Return.</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4 h-25">
             <div class="card">
-                <div class="card-header">Random joke.</div>
+                <div class="card-header">Birthdays Today.</div>
 
                 <div class="card-body">
 
@@ -37,21 +44,21 @@
                     <div class="col-md-3">
                         <div class="card-body">
                             <p>
-                                <a href="/SPH/IT Policy.pdf" class="btn btn-secondary">IT Policy</a>
+                                <a href="/SPH/IT Policy.pdf" target="blank" class="btn btn-secondary">IT Policy</a>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card-body">
                             <p>
-                                <a href="/SPH/OoO Email Policy.pdf" class="btn btn-secondary">Email Policy</a>
+                                <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-secondary">Email Policy</a>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card-body">
                             <p>
-                                <a href="/SPH/Extension List 2018.xlsx" class="btn btn-secondary">Extension List</a>
+                                <a href="/SPH/Extension List 2019.pdf" target="blank" class="btn btn-secondary">Extension List</a>
                             </p>
                         </div>
                     </div>
