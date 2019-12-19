@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
   <div >
-    <h1 class="text-center">SPH Returns</h1>
+    <h1 class="text-center">SPH PC Returns</h1>
   </div>
 </div>
 <hr class="mt-3">
