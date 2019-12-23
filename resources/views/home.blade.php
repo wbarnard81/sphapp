@@ -32,11 +32,12 @@
         </div>
         <div class="col-md-4 h-25">
             <div class="card">
-                <div class="card-header">Birthdays Today.</div>
+                <div class="card-header">Birthdays this Month.</div>
 
                 <div class="card-body">
-
-                    <h5>Stay tuned for more information.</h5>
+                    @foreach ($birthdays as $birthday)
+                    <p>{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
+                    @endforeach
                 </div>
             </div>
         </div>

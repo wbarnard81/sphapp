@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Birthday;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
-{    
+{
     /**
      * Show the application dashboard.
      *
@@ -13,11 +14,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $jokeContent = file_get_contents('http://api.icndb.com/jokes/random');
-        // $jokesArray = json_decode($jokeContent, true);
-        // $joke = $jokesArray['value']['joke'];
-        // return view('home')->with('joke', $joke);
-	return view('home');
+        $birthdays = Birthday::whereRaw('DAYOFYEAR(curdate()) <= DAYOFYEAR(birthday)')
+            ->orderByRaw('DAYOFYEAR(birthday)')
+            ->get();
+        return view('home')->with('birthdays', $birthdays);
     }
 
     public function welcome()

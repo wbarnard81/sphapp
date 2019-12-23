@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Birthday;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BirthdayController extends Controller
 {
@@ -19,11 +20,19 @@ class BirthdayController extends Controller
         return view('pages.birthdays.create');
     }
 
-    public function store(Birthday $Birthday)
+    public function store(Request $request)
     {
-        Birthday::create($Birthday->all());
+        $validator = Validator::make($request->all(), [
+            'firstname' => 'required|min:4|max:50',
+            'lastname' => 'required|min:4|max:50',
+            'birthday' => 'required',
+            'site' => 'required',
+        ]);
+        $data = $validator->validate();
 
-        return redirect('/birthdays')->with('success', 'Birthday has been added.');
+        Birthday::create($data);
+
+        return redirect('/birthdays')->with('success', 'The birthday has been added.');
     }
 
     public function show($id)
@@ -38,17 +47,25 @@ class BirthdayController extends Controller
         return view('pages.birthdays.edit')->with('birthday', $birthday);
     }
 
-    public function update(Birthday $birthday, $id)
+    public function update(Request $request, $id)
     {
         try {
-            $birthday = Birthday::find($id);
-            $birthday->update($birthday->all());
-            $birthday->save();
+            $validator = Validator::make($request->all(), [
+                'firstname' => 'required|min:4|max:50',
+                'lastname' => 'required|min:4|max:50',
+                'birthday' => 'required',
+                'site' => 'required',
+            ]);
+            $data = $validator->validate();
+
+            $bdayupdate = Birthday::find($id);
+            $bdayupdate->update($data);
+            $bdayupdate->save();
         } catch (\Exception $exception) {
             return redirect('/birthdays')->with('error', 'Error: ' . $exception->getMessage);
         }
 
-        return redirect('/birthdays')->with('success', 'Birthday has been updated.');
+        return redirect('/birthdays')->with('success', 'The birthday has been updated.');
     }
 
     public function destroy($id)
