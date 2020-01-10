@@ -5,6 +5,14 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('pcreturns/create', 'PcreturnController@create');
 Route::post('pcreturns/create', 'PcreturnController@store');
+Route::get('pcmove/create', 'PcmoveController@create');
+Route::post('pcmove/create', 'PcmoveController@store');
+
+Route::get('pcmove/{pcreturn}', 'PcmoveController@show')->middleware(['auth']);
+Route::get('pcmove', 'PcmoveController@index')->middleware(['auth']);
+Route::patch('pcmove/{pcreturn}', 'PcmoveController@update')->middleware(['auth']);
+Route::delete('pcmove/{pcreturn}', 'PcmoveController@destroy')->middleware(['auth']);
+Route::get('pcmove/{pcreturn}/edit', 'PcmoveController@edit')->middleware(['auth']);
 
 Route::get('pcreturns/{pcreturn}', 'PcreturnController@show')->middleware(['auth']);
 Route::get('pcreturns', 'PcreturnController@index')->middleware(['auth']);

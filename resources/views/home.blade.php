@@ -20,7 +20,7 @@
                             @if (Auth::check())
                             <div><a href="/computers" class="btn btn-primary btn-lg">SPH Computers.</a></div>
                             <div><a href="/birthdays" class="btn btn-success btn-lg">SPH Birthdays.</a></div>
-                            <div><a href="/pcreturns/" class="btn btn-warning btn-lg">PC Returns.</a></div>
+                            <div><a href="/pcreturns" class="btn btn-warning btn-lg">PC Returns.</a></div>
                             @endif
                             @guest
                             <div><a href="/pcreturns/create" class="btn btn-warning btn-lg">Log PC Return.</a></div>
@@ -67,7 +67,7 @@
                 <div class="card-body">
                     <div class="row justify-content-around row-cols-4">
                         @foreach ($birthdays as $birthday)
-                            <p class="col-md-auto border border-warning">{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
+                            <p class="col-md-auto border border-success">{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
                         @endforeach
                     </div>
                 </div>
