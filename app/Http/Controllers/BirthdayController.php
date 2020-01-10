@@ -32,7 +32,7 @@ class BirthdayController extends Controller
 
         Birthday::create($data);
 
-        return redirect('/birthdays')->with('success', 'The birthday has been added.');
+        return redirect('/birthdays/create')->with('success', 'The birthday has been added.');
     }
 
     public function show($id)

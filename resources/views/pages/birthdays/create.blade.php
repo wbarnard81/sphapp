@@ -12,7 +12,7 @@
         <fieldset>
             <div class="form-group row">
                 <label for="firstname" class="col-2 col-form-label">First Name:</label>
-                <input type="text" name="firstname" class="form-control col-6" id="firstname" placeholder="John" required>
+                <input type="text" name="firstname" class="form-control col-6" id="firstname" placeholder="John" required autofocus>
             </div>
             <div class="form-group row">
                 <label for="lastname" class="col-2 col-form-label">Last Name:</label>

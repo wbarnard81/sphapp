@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SPHAPP') }}</title>
+    <title>{{ config('app.name', 'SPH Intranet') }}</title>
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <img src="/SGOC.png">
                 <a class="navbar-brand ml-3" href="{{ url('/') }}">
-                    {{ config('app.name', 'SPHAPP') }}
+                    {{ config('app.name', 'SPH Intranet') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

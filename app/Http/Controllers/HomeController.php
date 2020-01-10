@@ -14,8 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $birthdays = Birthday::whereRaw('DAYOFYEAR(curdate()) <= DAYOFYEAR(birthday)')
-            ->orderByRaw('DAYOFYEAR(birthday)')
+        $birthdays = Birthday::whereRaw('MONTH(curdate()) = MONTH(birthday)')
+            ->orderByRaw('MONTH(birthday)')
             ->get();
         return view('home')->with('birthdays', $birthdays);
     }
