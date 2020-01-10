@@ -67,7 +67,7 @@
                 <div class="card-body">
                     <div class="row justify-content-around row-cols-4">
                         @foreach ($birthdays as $birthday)
-                            <p class="col border border-warning mr-2">{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
+                            <p class="col-md-auto border border-warning">{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
                         @endforeach
                     </div>
                 </div>
