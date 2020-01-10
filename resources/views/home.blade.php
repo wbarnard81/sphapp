@@ -21,6 +21,7 @@
                             <div><a href="/computers" class="btn btn-primary btn-lg">SPH Computers.</a></div>
                             <div><a href="/birthdays" class="btn btn-success btn-lg">SPH Birthdays.</a></div>
                             <div><a href="/pcreturns" class="btn btn-warning btn-lg">PC Returns.</a></div>
+                            <div><a href="/pcmove" class="btn btn-info btn-lg">PC Moves.</a></div>
                             @endif
                             @guest
                             <div><a href="/pcreturns/create" class="btn btn-warning btn-lg">Log PC Return.</a></div>
