@@ -40,7 +40,7 @@
  
   
 <hr class="mt-4">
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
 @section('scripts')
     
 $(document).ready( function () {

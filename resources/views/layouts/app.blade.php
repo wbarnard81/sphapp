@@ -12,7 +12,7 @@
     <title>{{ config('app.name', 'SPH Intranet') }}</title>
     <!-- Styles -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/css/styles.css">
 
     <!-- Scripts -->
