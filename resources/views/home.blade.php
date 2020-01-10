@@ -32,42 +32,41 @@
         </div>
         <div class="col-md-4 h-25">
             <div class="card">
-                <div class="card-header">Birthdays this Month.</div>
-
-                <div class="card-body">
-                    @foreach ($birthdays as $birthday)
-                    <p>{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
-                    @endforeach
+                <div class="card-header">SPH Policies and Procedures.</div>
+                <div class="">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>
+                                    <a href="/SPH/IT Policy.pdf" target="blank" class="btn btn-sm btn-secondary">IT Policy</a>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p>
+                                    <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-sm btn-secondary">Email Policy</a>
+                                </p>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <p>
+                                    <a href="/SPH/Extension List 2019.pdf" target="blank" class="btn btn-sm btn-secondary">Extension List</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-12 mt-4">
-            <div class="card">
-                <div class="card-header">SPH Policies and Procedures.</div>
-                <div class="row justify-content-center">
-                    <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header">Birthdays this Month.</div>
+        
                         <div class="card-body">
-                            <p>
-                                <a href="/SPH/IT Policy.pdf" target="blank" class="btn btn-secondary">IT Policy</a>
-                            </p>
+                            @foreach ($birthdays as $birthday)
+                            <p>{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card-body">
-                            <p>
-                                <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-secondary">Email Policy</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card-body">
-                            <p>
-                                <a href="/SPH/Extension List 2019.pdf" target="blank" class="btn btn-secondary">Extension List</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
