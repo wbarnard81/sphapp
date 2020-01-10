@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -46,12 +46,12 @@
                                     <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-sm btn-secondary">Email Policy</a>
                                 </p>
                             </div>
-                            <div class="w-100"></div>
                             <div class="col">
                                 <p>
                                     <a href="/SPH/Extension List 2019.pdf" target="blank" class="btn btn-sm btn-secondary">Extension List</a>
                                 </p>
                             </div>
+                            <div class="w-100"></div>
                         </div>
                     </div>
                 </div>
