@@ -24,6 +24,7 @@
                             @endif
                             @guest
                             <div><a href="/pcreturns/create" class="btn btn-warning btn-lg">Log PC Return.</a></div>
+                            <div><a href="/pcmove/create" class="btn btn-info btn-lg">Log PC Movement.</a></div>
                             @endguest
                         </div>
                     </div>
