@@ -9,6 +9,7 @@
     <thead class="thead-dark">
     <tr>
       <th scope="col"><input type="text" id="ssn" placeholder="Search Serial Number"></th>
+      <th scope="col"><input type="text" id="hostname" placeholder="Search Hostname"></th>
       <th scope="col"><input type="text" id="smanu" placeholder="Search Manufacturer"></th>
       <th scope="col"><input type="text" id="smodel" placeholder="Search Model"></th>
       <th scope="col"><input type="text" id="suname" placeholder="Search User Name"></th>
@@ -21,6 +22,7 @@
     </tr>
       <tr>
         <th scope="col">Serial Number</th>
+        <th scope="col">Hostname</th>
         <th scope="col">Manufacturer</th>
         <th scope="col">Model</th>
         <th scope="col">User Name</th>
@@ -36,6 +38,7 @@
       @if(count($computers) > 0) @foreach($computers as $computer)
       <tr>
         <td>{{$computer->serialnumber}}</td>
+        <td>{{$computer->hostname}}</td>
         <td>{{$computer->manufacturer}}</td>
         <td>{{$computer->model}}</td>
         <td><a class="btn btn-link" href="/computers/{{$computer->id}}/edit">{{$computer->username}}</a></td>
