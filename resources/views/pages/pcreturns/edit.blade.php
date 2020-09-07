@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 @section('content')
 <div class="container">
     <div>
@@ -42,6 +42,9 @@
                 </div>
                 <div class="col-8 d-flex flex-row-reverse pr-0">
                     <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div>
+                    <p><strong>Submitted: </strong>{{$pcreturns->created_at->format('d M Y')}}</p>
                 </div>
             </fieldset>
         </form>

@@ -1,7 +1,6 @@
-@extends('layouts.app') 
+@extends('layouts.app')
+
 @section('content')
-
-
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -36,23 +35,22 @@
             <div class="card">
                 <div class="card-header">SPH Policies and Procedures.</div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col">
+                        <div class="d-flex justify-space-between">
+                            <div class="col text-center">
                                 <p>
                                     <a href="/SPH/IT Policy.pdf" target="blank" class="btn btn-sm btn-secondary">IT Policy</a>
                                 </p>
                             </div>
-                            <div class="col">
+                            <div class="col text-center">
                                 <p>
                                     <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-sm btn-secondary">Email Policy</a>
                                 </p>
                             </div>
-                            <div class="col">
+                            <div class="col text-center">
                                 <p>
-                                    <a href="/SPH/Extension List 2019.pdf" target="blank" class="btn btn-sm btn-secondary">Extension List</a>
+                                    <a href="/SPH/Extension List 2020.pdf" target="blank" class="btn btn-sm btn-secondary">Extension List</a>
                                 </p>
                             </div>
-                            <div class="w-100"></div>
                         </div>
                     </div>
             </div>
@@ -69,7 +67,7 @@
                 <div class="card-body">
                     <div class="row justify-content-around row-cols-4">
                         @foreach ($birthdays as $birthday)
-                            <p class="col-md-auto border border-success">{{ $birthday->firstname }} {{ $birthday->lastname }} - {{ $birthday->site }}</p>
+                            <p class="col-md-auto border border-success">{{ $birthday->firstname }} {{ $birthday->lastname }} ({{ $birthday->site }})</p>
                         @endforeach
                     </div>
                 </div>

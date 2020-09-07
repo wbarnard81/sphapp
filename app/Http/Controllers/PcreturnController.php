@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pcreturn;
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,13 +12,15 @@ class PcreturnController extends Controller
     public function index()
     {
         $pcreturns = Pcreturn::all();
+        $siteNames = Setting::all();
 
-        return view('pages.pcreturns.index')->with('pcreturns', $pcreturns);
+        return view('pages.pcreturns.index', ['pcreturns' => $pcreturns, 'siteNames' => $siteNames]);
     }
 
     public function create()
     {
-        return view('pages.pcreturns.create');
+        $siteNames = Setting::all();
+        return view('pages.pcreturns.create', ['siteNames' => $siteNames]);
     }
 
     public function store(Request $request)

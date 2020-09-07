@@ -1,8 +1,11 @@
 <?php
 
-Auth::routes();
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
+Auth::routes();
+
+
 Route::get('pcreturns/create', 'PcreturnController@create');
 Route::post('pcreturns/create', 'PcreturnController@store');
 Route::get('pcmove/create', 'PcmoveController@create');
@@ -22,6 +25,7 @@ Route::get('pcreturns/{pcreturn}/edit', 'PcreturnController@edit')->middleware([
 
 Route::resource('/computers', 'ComputersController')->middleware(['auth']);
 Route::resource('/birthdays', 'BirthdayController')->middleware(['auth']);
+Route::resource('/settings', 'SettingController')->middleware(['auth']);
 Route::get('/list', 'ComputersController@list')->middleware(['auth']);
 Route::get('/computers/{id}/edit', 'ComputersController@edit')->middleware(['auth']);
 Route::get('/computers/{id}/delete', 'ComputersController@destroy')->middleware(['auth']);
