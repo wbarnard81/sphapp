@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \App\Computer;
+use \App\Setting;
 use \App\Http\Requests\ComputerCreateRequest;
 use \Illuminate\Http\Request;
 
@@ -71,8 +72,9 @@ class ComputersController extends Controller
     public function edit($id)
     {
         $computer = Computer::findOrFail($id);
+        $siteNames = Setting::all();
 
-        return view('pages.edit')->with('computer', $computer);
+        return view('pages.edit')->with(['computer' => $computer, 'siteNames' => $siteNames]);
     }
 
     /**

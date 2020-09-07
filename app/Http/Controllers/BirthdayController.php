@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Birthday;
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,13 +12,15 @@ class BirthdayController extends Controller
     public function index()
     {
         $birthdays = Birthday::all();
+        $siteNames = Setting::all();
 
-        return view('pages.birthdays.index')->with('birthdays', $birthdays);
+        return view('pages.birthdays.index', ['birthdays' => $birthdays, 'siteNames' => $siteNames]);
     }
 
     public function create()
     {
-        return view('pages.birthdays.create');
+        $siteNames = Setting::all();
+        return view('pages.birthdays.create', ['siteNames' => $siteNames]);
     }
 
     public function store(Request $request)
