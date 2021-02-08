@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \App\Computer;
+use \App\Setting;
 use \App\Http\Requests\ComputerCreateRequest;
 use \Illuminate\Http\Request;
 
@@ -34,7 +35,8 @@ class ComputersController extends Controller
      */
     public function create()
     {
-        return view('pages.addcomputer');
+        $siteNames = Setting::all();
+        return view('pages.addcomputer')->with('siteNames', $siteNames);
     }
 
     /**
@@ -45,7 +47,7 @@ class ComputersController extends Controller
      */
     public function store(ComputerCreateRequest $computerCreateRequest)
     {
-        Computer::create($computerCreateRequest->all());
+	Computer::create($computerCreateRequest->all());
 
         return redirect('/computers')->with('success', 'Computer has been added.');
 
@@ -71,8 +73,9 @@ class ComputersController extends Controller
     public function edit($id)
     {
         $computer = Computer::findOrFail($id);
+        $siteNames = Setting::all();
 
-        return view('pages.edit')->with('computer', $computer);
+        return view('pages.edit')->with(['computer' => $computer, 'siteNames' => $siteNames]);
     }
 
     /**

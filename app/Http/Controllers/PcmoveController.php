@@ -3,27 +3,30 @@
 namespace App\Http\Controllers;
 
 use App\Pcmove;
+use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class PcmoveController extends Controller
 {
     public function index()
     {
         $pcmoves = Pcmove::all();
+        $siteNames = Setting::all();
 
-        return view('pages.pcmove.index')->with('pcmoves', $pcmoves);
+        return view('pages.pcmove.index', ['pcmoves' => $pcmoves, 'siteNames' => $siteNames]);
     }
 
     public function create()
     {
-        return view('pages.pcmove.create');
+        $siteNames = Setting::all();
+        return view('pages.pcmove.create', ['siteNames' => $siteNames]);
     }
 
     public function store(Request $request)
     {
-
-        $validator = Validator::make($request->all(), [
+        $validated = $request->validate([
             'from_name' => 'required|min:4|max:100',
             'to_name' => 'required|min:4|max:100',
             'from_site' => 'required|min:4|max:100',
@@ -31,9 +34,8 @@ class PcmoveController extends Controller
             'move_date' => 'required',
             'contact_details' => 'required|min:10',
         ]);
-        $data = $validator->validate();
 
-        Pcmove::create($data);
+        Pcmove::create($validated);
 
         return redirect('/')->with('success', 'Your PC Move has been logged.');
     }

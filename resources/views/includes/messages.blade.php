@@ -1,10 +1,10 @@
 
 @if(count($errors) > 0)
-    @foreach($errors->all() as $error)
         <div class="alert alert-danger" role="alert">
-            {{$error}}
+            @foreach($errors->all() as $error)
+                <p>{{$error}}</p>
+            @endforeach
         </div>
-    @endforeach
 @endif
 
 @if(session('success'))
