@@ -33,7 +33,10 @@
       @endforeach
     </tbody>
   </table>
-  <div class="mt-5 mb-5 text-white">.</div>
+    <div class="mt-5 mb-5">
+        {{ $data->links() }}
+    </div>
+    <div class="mt-5 mb-5 text-white">.</div>
 </div>
 @endsection
 
