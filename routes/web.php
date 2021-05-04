@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/network-status', 'NetworkMonitorController@index')->name('network');
 Auth::routes();
 
 

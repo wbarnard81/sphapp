@@ -17,14 +17,15 @@
                     <div class="flex-row">
                         <div class="d-flex justify-content-around">
                             @if (Auth::check())
-                            <div><a href="/computers" class="btn btn-primary btn-lg">SPH Computers.</a></div>
-                            <div><a href="/birthdays" class="btn btn-success btn-lg">SPH Birthdays.</a></div>
-                            <div><a href="/pcreturns" class="btn btn-warning btn-lg">PC Returns.</a></div>
-                            <div><a href="/pcmove" class="btn btn-info btn-lg">PC Moves.</a></div>
+                            <div><a href="/computers" class="btn btn-primary">SPH Computers</a></div>
+                            <div><a href="/birthdays" class="btn btn-success">SPH Birthdays</a></div>
+                            <div><a href="/pcreturns" class="btn btn-warning">PC Returns</a></div>
+                            <div><a href="/pcmove" class="btn btn-info">PC Moves</a></div>
                             @endif
                             @guest
-                            <div><a href="/pcreturns/create" class="btn btn-warning btn-lg">Log PC Return.</a></div>
-                            <div><a href="/pcmove/create" class="btn btn-info btn-lg">Log PC Movement.</a></div>
+                            <div><a href="/network-status" class="btn btn-primary">Network Status</a></div>
+                            <div><a href="/pcreturns/create" class="btn btn-warning">Log PC Return</a></div>
+                            <div><a href="/pcmove/create" class="btn btn-info">Log PC Movement</a></div>
                             @endguest
                         </div>
                     </div>
@@ -38,17 +39,17 @@
                         <div class="d-flex justify-space-between">
                             <div class="col text-center">
                                 <p>
-                                    <a href="/SPH/IT Policy.pdf" target="blank" class="btn btn-sm btn-secondary">IT Policy</a>
+                                    <a href="/SPH/IT Policy.pdf" target="blank" class="btn btn-secondary">IT Policy</a>
                                 </p>
                             </div>
                             <div class="col text-center">
                                 <p>
-                                    <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-sm btn-secondary">Email Policy</a>
+                                    <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-secondary">Email Policy</a>
                                 </p>
                             </div>
                             <div class="col text-center">
                                 <p>
-                                    <a href="/SPH/Extension List 2021.pdf" target="blank" class="btn btn-sm btn-secondary">Extension List</a>
+                                    <a href="/SPH/Extension List 2021.pdf" target="blank" class="btn btn-secondary">Extension List</a>
                                 </p>
                             </div>
                         </div>
