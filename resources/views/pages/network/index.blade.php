@@ -1,6 +1,6 @@
 @extends('layouts.app') 
 @section('content')
-<div class="container">
+<div class="container mb-5">
   <div >
     <h1 class="text-center">SPH Network Status</h1>
   </div>
@@ -33,6 +33,7 @@
       @endforeach
     </tbody>
   </table>
+  <div class="mt-5 mb-5 text-white">.</div>
 </div>
 @endsection
 
