@@ -1,9 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/network-status', 'NetworkMonitorController@index')->name('network');
+Route::get('/network-ping', 'NetworkMonitorController@checkStatus')->name('network');
 Auth::routes();
 
 

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use \App\Computer;
 use \App\Setting;
-use \App\Http\Requests\ComputerCreateRequest;
+use \App\Computer;
 use \Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use \App\Http\Requests\ComputerCreateRequest;
 
 class ComputersController extends Controller
 {
@@ -47,10 +48,12 @@ class ComputersController extends Controller
      */
     public function store(ComputerCreateRequest $computerCreateRequest)
     {
-	Computer::create($computerCreateRequest->all());
+        $createdComputer = Computer::create($computerCreateRequest->all());
+        $uploadedFile = $computerCreateRequest->file('laptop_policy')->storeAs('laptop_policies', $computerCreateRequest->username . "-" . Carbon::create(now())->toDateString() . ".pdf");
 
+        $createdComputer->laptop_policy = $uploadedFile;
+        $createdComputer->save();
         return redirect('/computers')->with('success', 'Computer has been added.');
-
     }
 
     /**

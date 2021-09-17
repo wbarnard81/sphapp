@@ -14,7 +14,7 @@ class Computer extends Model
     /**
      * @var array $fillable
      */
-    protected $fillable = ['serialnumber', 'username', 'hostname', 'manufacturer', 'model', 'cpumodel', 'memory', 'email', 'officetype', 'officekey', 'site', 'hddtype'];
+    protected $fillable = ['serialnumber', 'username', 'hostname', 'manufacturer', 'model', 'cpumodel', 'memory', 'email', 'officetype', 'officekey', 'site', 'hddtype', 'laptop_policy'];
 
     /**
      * @var string $primaryKey

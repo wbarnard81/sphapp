@@ -13,4 +13,11 @@ class NetworkMonitorController extends Controller
 
         return view('pages.network.index', compact('data', $data));
     }
+
+    public function checkStatus()
+    {
+        $pingData = NetworkMonitor::pinger('8.8.8.8');
+
+        dd($pingData);
+    }
 }

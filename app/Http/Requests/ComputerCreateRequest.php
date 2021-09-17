@@ -38,6 +38,7 @@ class ComputerCreateRequest extends FormRequest
             'officetype' => 'required',
             'officekey' => 'required|unique:computers,officekey,' . $id,
             'site' => 'required',
+            'laptop_policy' => 'nullable|mimes:pdf',
         ];
     }
 
