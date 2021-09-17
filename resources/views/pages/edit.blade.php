@@ -141,6 +141,7 @@
                 <strong>Created:</strong> {{$computer->created_at->format('d M Y')}} | <strong>Updated:</strong> {{$computer->updated_at->format('d M Y')}}
             </p>
 
+            @if($computer->laptop_policy)
             <div class="form-row">
                 <div class="col-4 mb-1">
                     <div class="form-group">
@@ -148,6 +149,7 @@
                     </div>
                 </div>
             </div>
+            @endif
         </form>
     </div>
 </div>
