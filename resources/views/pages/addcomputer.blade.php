@@ -137,7 +137,7 @@
             <div class="form-row">
                 <div class="col-4 my-2">
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Upload Laptop Policy</label>
+                        <label for="laptop_policy">Upload Laptop Policy</label>
                         <input type="file" class="form-control-file" name="laptop_policy">
                     </div>
                 </div>

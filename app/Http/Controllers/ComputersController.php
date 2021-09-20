@@ -49,9 +49,10 @@ class ComputersController extends Controller
     public function store(ComputerCreateRequest $computerCreateRequest)
     {
         $createdComputer = Computer::create($computerCreateRequest->all());
-        $uploadedFile = $computerCreateRequest->file('laptop_policy')->storeAs('laptop_policies', $computerCreateRequest->username . "-" . Carbon::create(now())->toDateString() . ".pdf");
-
-        $createdComputer->laptop_policy = $uploadedFile;
+        if($computerCreateRequest->laptop_policy) {
+            $uploadedFile = $computerCreateRequest->file('laptop_policy')->storeAs('laptop_policies', $computerCreateRequest->username . "-" . Carbon::create(now())->toDateString() . ".pdf");
+            $createdComputer->laptop_policy = $uploadedFile;
+        }
         $createdComputer->save();
         return redirect('/computers')->with('success', 'Computer has been added.');
     }
@@ -93,6 +94,10 @@ class ComputersController extends Controller
         try {
             $computer = Computer::find($id);
             $computer->update($computerCreateRequest->all());
+            if($computerCreateRequest->laptop_policy) {
+                $uploadedFile = $computerCreateRequest->file('laptop_policy')->storeAs('laptop_policies', $computerCreateRequest->username . "-" . Carbon::create(now())->toDateString() . ".pdf");
+                $computer->laptop_policy = $uploadedFile;
+            }
             $computer->save();
         } catch (\Exception $exception) {
             return redirect('/computers')->with('error', 'Error: ' . $exception->getMessage);

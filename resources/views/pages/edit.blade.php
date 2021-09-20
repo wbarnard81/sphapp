@@ -3,7 +3,7 @@
 @section('content')
 <div class="container p-5 mb-5 bg-white">
     <div>
-        <form action="/computers/{{$computer->id}}" method="POST">
+        <form action="/computers/{{$computer->id}}" method="POST"  enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="d-flex justify-content-between">
@@ -146,6 +146,11 @@
                 <div class="col-4 mb-1">
                     <div class="form-group">
                         <a class="btn btn-primary" href="{{ url($computer->laptop_policy) }}">Laptop Policy</a>
+                    </div>
+                    <div class="form-group">
+                    <label for="laptop_policy">Upload New Laptop Policy</label>
+                    <input type="file" class="form-control-file" name="laptop_policy">
+                    
                     </div>
                 </div>
             </div>
