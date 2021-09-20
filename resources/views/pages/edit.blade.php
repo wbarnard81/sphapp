@@ -147,14 +147,15 @@
                     <div class="form-group">
                         <a class="btn btn-primary" href="{{ url($computer->laptop_policy) }}">Laptop Policy</a>
                     </div>
-                    <div class="form-group">
-                    <label for="laptop_policy">Upload New Laptop Policy</label>
-                    <input type="file" class="form-control-file" name="laptop_policy">
-                    
-                    </div>
                 </div>
             </div>
             @endif
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="laptop_policy">Upload Laptop Policy</label>
+                    <input type="file" class="form-control-file" name="laptop_policy">
+                </div>
+            </div>
         </form>
     </div>
 </div>
