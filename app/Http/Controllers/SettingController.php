@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Document;
 use App\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class SettingController extends Controller
 {
@@ -102,5 +104,37 @@ class SettingController extends Controller
         $siteNames = Setting::all();
 
         return view('pages.settings.index')->with('siteNames', $siteNames);
+    }
+
+    public function upload(Request $request)
+    {
+        if($request['upload-type'] === "it-policy") {
+            $uploadedFile = $request->file('file-upload')->storeAs('documents', $request->file('file-upload')->getClientOriginalName());
+            
+            Document::updateOrCreate(
+                ['type' => 'it-policy'],
+                ['name' => 'IT Policy', 'type' => 'it-policy', 'file-name' => $uploadedFile]
+            );
+
+            return redirect()->back();
+        } else if ($request['upload-type'] === "email-policy") {
+            $uploadedFile = $request->file('file-upload')->storeAs('documents', $request->file('file-upload')->getClientOriginalName());
+
+            Document::updateOrCreate(
+                ['type' => 'email-policy'],
+                ['name' => 'Email Policy', 'type' => 'email-policy', 'file-name' => $uploadedFile]
+            );
+
+            return redirect()->back();
+        } else if ($request['upload-type'] === "telephone-list") {
+            $uploadedFile = $request->file('file-upload')->storeAs('documents', $request->file('file-upload')->getClientOriginalName());
+            
+            Document::updateOrCreate(
+                ['type' => 'telephone-list'],
+                ['name' => 'Telephone List', 'type' => 'telephone-list', 'file-name' => $uploadedFile]
+            );
+
+            return redirect()->back();
+        }
     }
 }

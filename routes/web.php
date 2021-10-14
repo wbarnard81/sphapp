@@ -29,6 +29,7 @@ Route::get('pcreturns/{pcreturn}/edit', 'PcreturnController@edit')->middleware([
 Route::resource('/computers', 'ComputersController')->middleware(['auth']);
 Route::resource('/birthdays', 'BirthdayController')->middleware(['auth']);
 Route::resource('/settings', 'SettingController')->middleware(['auth']);
+Route::post('/settings/upload', 'SettingController@upload')->middleware(['auth']);
 Route::get('/list', 'ComputersController@list')->middleware(['auth']);
 Route::get('/computers/{id}/edit', 'ComputersController@edit')->middleware(['auth']);
 Route::get('/computers/{id}/delete', 'ComputersController@destroy')->middleware(['auth']);

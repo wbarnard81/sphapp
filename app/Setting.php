@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-    protected $fillable = ['siteName'];
+    protected $fillable = ['siteName', 'upload-type'];
 }

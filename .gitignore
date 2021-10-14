@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/laptop_policies
+/public/documents
 /storage/*.key
 /vendor
 .env
