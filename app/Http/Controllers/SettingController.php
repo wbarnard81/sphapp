@@ -113,7 +113,7 @@ class SettingController extends Controller
             
             Document::updateOrCreate(
                 ['type' => 'it-policy'],
-                ['name' => 'IT Policy', 'type' => 'it-policy', 'file-name' => $uploadedFile]
+                ['name' => 'IT Policy', 'type' => 'it-policy', 'file_name' => $uploadedFile]
             );
 
             return redirect()->back();
@@ -122,7 +122,7 @@ class SettingController extends Controller
 
             Document::updateOrCreate(
                 ['type' => 'email-policy'],
-                ['name' => 'Email Policy', 'type' => 'email-policy', 'file-name' => $uploadedFile]
+                ['name' => 'Email Policy', 'type' => 'email-policy', 'file_name' => $uploadedFile]
             );
 
             return redirect()->back();
@@ -131,7 +131,7 @@ class SettingController extends Controller
             
             Document::updateOrCreate(
                 ['type' => 'telephone-list'],
-                ['name' => 'Telephone List', 'type' => 'telephone-list', 'file-name' => $uploadedFile]
+                ['name' => 'Telephone List', 'type' => 'telephone-list', 'file_name' => $uploadedFile]
             );
 
             return redirect()->back();

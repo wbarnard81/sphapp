@@ -32,7 +32,7 @@
                             @endif
                             @guest
                                 <div>
-                                    <a href="http://sph.sandtonplant.local:3001/status" class="btn btn-primary">SPH Servers Status</a>
+                                    <a href="http://sph.sandtonplant.local:3001/status" target="blank" class="btn btn-primary">SPH Servers Status</a>
                                 </div>
                                 <div>
                                     <a href="/pcreturns/create" class="btn btn-warning">Log PC Return</a>
@@ -51,21 +51,13 @@
                 <div class="card-header">SPH Policies and Procedures.</div>
                     <div class="card-body">
                         <div class="d-flex justify-space-between">
-                            <div class="col text-center">
-                                <p>
-                                    <a href="/SPH/IT Policy.pdf" target="blank" class="btn btn-secondary">IT Policy</a>
-                                </p>
-                            </div>
-                            <div class="col text-center">
-                                <p>
-                                    <a href="/SPH/OoO Email Policy.pdf" target="blank" class="btn btn-secondary">Email Policy</a>
-                                </p>
-                            </div>
-                            <div class="col text-center">
-                                <p>
-                                    <a href="/SPH/Extension List 2021.pdf" target="blank" class="btn btn-secondary">Extension List</a>
-                                </p>
-                            </div>
+                            @foreach($documents as $document)
+                                <div class="col text-center">
+                                    <p>
+                                        <a href="{{ $document->file_name }}" target="blank" class="btn btn-secondary">{{ $document->name }}</a>
+                                    </p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
             </div>

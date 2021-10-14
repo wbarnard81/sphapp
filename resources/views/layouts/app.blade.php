@@ -43,7 +43,7 @@
                     <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="http://sph.sandtonplant.local:3001/status">
+                        <a class="nav-link" href="http://sph.sandtonplant.local:3001/status" target="_blank">
                             SPH Servers Status
                         </a>
                     </li>

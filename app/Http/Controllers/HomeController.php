@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Birthday;
+use App\Document;
 use App\Setting;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,9 @@ class HomeController extends Controller
             ->orderByRaw('MONTH(birthday)')
             ->get();
 
-        return view('home', ['birthdays' => $birthdays]);
+        $documents = Document::all();
+
+        return view('home', ['birthdays' => $birthdays, 'documents' => $documents]);
     }
 
     public function welcome()

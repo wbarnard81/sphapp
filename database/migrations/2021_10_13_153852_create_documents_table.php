@@ -17,7 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
-            $table->string('file-name');
+            $table->string('file_name');
             $table->timestamps();
         });
     }
