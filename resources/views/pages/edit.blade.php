@@ -145,7 +145,7 @@
             <div class="form-row">
                 <div class="col-4 mb-1">
                     <div class="form-group">
-                        <a class="btn btn-primary" href="{{ url($computer->laptop_policy) }}">Laptop Policy</a>
+                        <a class="btn btn-primary" target="blank" href="{{ url($computer->laptop_policy) }}">Laptop Policy</a>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use \App\Setting;
 use \App\Computer;
+use Illuminate\Support\Str;
 use \Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use \App\Http\Requests\ComputerCreateRequest;
@@ -50,7 +51,7 @@ class ComputersController extends Controller
     {
         $createdComputer = Computer::create($computerCreateRequest->all());
         if($computerCreateRequest->laptop_policy) {
-            $uploadedFile = $computerCreateRequest->file('laptop_policy')->storeAs('laptop_policies', $computerCreateRequest->username . "-" . Carbon::create(now())->toDateString() . ".pdf");
+            $uploadedFile = $computerCreateRequest->file('laptop_policy')->storeAs('laptop_policies', Str::slug($computerCreateRequest->username, '-') . "-" . Carbon::create(now())->toDateString() . ".pdf");
             $createdComputer->laptop_policy = $uploadedFile;
         }
         $createdComputer->save();

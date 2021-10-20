@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Document;
 use App\Setting;
+use App\Document;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -109,7 +110,7 @@ class SettingController extends Controller
     public function upload(Request $request)
     {
         if($request['upload-type'] === "it-policy") {
-            $uploadedFile = $request->file('file-upload')->storeAs('documents', $request->file('file-upload')->getClientOriginalName());
+            $uploadedFile = $request->file('file-upload')->storeAs('documents', Str::slug($request->file('file-upload')->getClientOriginalName(), '-'));
             
             Document::updateOrCreate(
                 ['type' => 'it-policy'],
@@ -118,7 +119,7 @@ class SettingController extends Controller
 
             return redirect()->back();
         } else if ($request['upload-type'] === "email-policy") {
-            $uploadedFile = $request->file('file-upload')->storeAs('documents', $request->file('file-upload')->getClientOriginalName());
+            $uploadedFile = $request->file('file-upload')->storeAs('documents', Str::slug($request->file('file-upload')->getClientOriginalName(), '-'));
 
             Document::updateOrCreate(
                 ['type' => 'email-policy'],
@@ -127,7 +128,7 @@ class SettingController extends Controller
 
             return redirect()->back();
         } else if ($request['upload-type'] === "telephone-list") {
-            $uploadedFile = $request->file('file-upload')->storeAs('documents', $request->file('file-upload')->getClientOriginalName());
+            $uploadedFile = $request->file('file-upload')->storeAs('documents', Str::slug($request->file('file-upload')->getClientOriginalName(), '-'));
             
             Document::updateOrCreate(
                 ['type' => 'telephone-list'],
